@@ -1,12 +1,19 @@
-var mailEntry = document.querySelector(".email");
-var pasEntry = document.querySelector(".password");
-var submitBtn = document.querySelector("#submit");
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-submitBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (mailEntry.textContent != null) {
-        if (pasEntry.textContent != null) {
-            alert(pasEntry.textContent);
-        }
+function generatePassword() {
+    var securePas = "";
+    for (var i = 0; i < 10; i++) {
+        securePas += String.fromCharCode(Math.random() * (126 - 33) + 33);
     }
-});
+}
+
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
