@@ -2,6 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+    var charNum = prompt("How log do you want you password?").trim();
+    while(isNaN(charNum) || charNum < 0){
+        charNum = prompt("Only enter a positive, valid integer").trim();
+    }
+
     var securePas = "";
     for (var i = 0; i < 10; i++) {
         securePas += String.fromCharCode(Math.floor(35 + Math.random() * 91));
