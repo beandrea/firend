@@ -8,7 +8,7 @@ function generatePassword() {
     }
 
     var securePas = "";
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < parseInt(charNum); i++) {
         securePas += String.fromCharCode(Math.floor(35 + Math.random() * 91));
     }
     console.log(securePas);
